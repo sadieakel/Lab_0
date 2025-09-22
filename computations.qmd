@@ -1,0 +1,37 @@
+---
+title: Quarto Computations
+echo: false
+fig-height: 3.5
+fig-width: 6
+---
+
+This dataset contains a subset of the fuel economy data from the EPA.
+
+```{python}
+#| label: load-packages
+from plotnine import *
+from plotnine.data import mpg
+```
+
+The visualization below shows a positive, strong, and linear relationship between the city and highway mileage of these cars. Additionally, mileage is higher for cars with fewer cylinders.
+
+```{python}
+#| echo: true
+#| label: scatterplot
+(
+    ggplot(mpg, aes(x="hwy", y="cty", color="cyl"))
+    + geom_point(alpha=0.5, size=2)
+    + scale_color_continuous()
+    + theme_bw()
+)
+```
+
+
+```{python}
+#| echo: true
+#| label: nobs
+
+len(mpg)
+```
+
+There are `{python} len(mpg)` observations in our data.
