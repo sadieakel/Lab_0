@@ -1,5 +1,8 @@
 ---
 title: Quarto Computations
+format:
+    html: 
+        embed-resources: true
 echo: false
 fig-height: 3.5
 fig-width: 6
